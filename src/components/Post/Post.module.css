@@ -1,0 +1,24 @@
+:root {
+    --radius: 16px;
+}
+
+section {
+    background-color: #fff;
+    width: min-content;
+    border-radius: var(--radius);
+}
+
+.img {
+    border-radius: var(--radius) var(--radius) 0 0;
+    height: 400px;
+    width: 600px;
+    background-color: #CCCCCC;
+}
+
+.desc {
+    padding: 12px;
+}
+
+.desc>* {
+    margin: 4px 0;
+}
