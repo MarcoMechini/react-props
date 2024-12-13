@@ -1,17 +1,25 @@
 import AppBtn from "../Btn/Btn"
 import style from './Post.module.css'
 
-export default function AppContainer() {
+const url = '/image/';
+
+export default function Post(props) {
     return (
         <section>
-            <div className={style.img}></div>
+            <img className={style.img} src={`${url}${props.post.image}`} />
             <div className={style.desc}>
                 <h3>
-                    Titolo del post
+                    {props.post.title}
                 </h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aut veniam enim velit, aperiam quas placeat consectetur excepturi libero quibusdam incidunt aliquid voluptate cum rerum, aliquam tenetur eum architecto illo.
+                    {props.post.content}
                 </p>
+                <div>
+                    {props.post.tags.map((curTag, index) => {
+                        return <div key={index} className={`tag ${style[curTag]}`}>{curTag}</div>
+                    })
+                    }
+                </div>
                 <AppBtn />
             </div>
         </section>
